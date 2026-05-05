@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Ders Notu Takas Sitesi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+    <header class="topbar">
+      <div class="owner">Anıl Efe Serçe</div>
+      <div class="brand"><span>Ders Notu Takas Sitesi</span><small>Admin</small></div>
+    </header>
+
+    <div class="app-shell">
+      <main id="icerik" class="content">
+        <nav class="section-nav" aria-label="Sayfalar">
+          <a href="index.html">Ana sayfa</a>
+          <a href="dersler.html">Ders listesi</a>
+          <a href="yukle.html">PDF yükle</a>
+          <a href="analiz.html">Özet & Soru</a>
+          <a class="active" href="admin.html" aria-current="page">Admin</a>
+          <a href="giris.html">Giriş</a>
+        </nav>
+
+        <section class="page-intro">
+          <p class="eyebrow">Admin bölümü</p>
+          <h1>Onay bekleyen PDF notlarını ayrı ekranda yönet.</h1>
+          <p>Admin işlemleri ana sayfadan ayrıldığı için arayüz daha az yoğun görünür.</p>
+        </section>
+
+        <section class="tool-band admin-band">
+          <div class="section-head">
+            <p class="eyebrow">Onay kuyruğu</p>
+            <h2>Onay bekleyen PDF notları</h2>
+          </div>
+          <div class="admin-summary" aria-live="polite">
+            <span><strong id="pendingCount">8</strong> bekleyen</span>
+            <span><strong id="approvedCount">0</strong> onaylanan</span>
+            <span><strong id="rejectedCount">0</strong> reddedilen</span>
+          </div>
+          <div class="admin-filter-bar" aria-label="Admin durum filtreleri">
+            <button class="filter-pill active" type="button" data-admin-filter="all" aria-pressed="true">Tümü</button>
+            <button class="filter-pill" type="button" data-admin-filter="pending" aria-pressed="false">Bekleyen</button>
+            <button class="filter-pill" type="button" data-admin-filter="approved" aria-pressed="false">Onaylanan</button>
+            <button class="filter-pill" type="button" data-admin-filter="rejected" aria-pressed="false">Reddedilen</button>
+            <button class="filter-pill ghost" type="button" id="resetQueue">Demo veriyi sıfırla</button>
+          </div>
+          <div id="adminQueue" class="admin-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

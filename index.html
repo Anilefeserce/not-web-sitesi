@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ders Notu Takas Sitesi</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+    <header class="topbar">
+      <div class="owner">Anıl Efe Serçe</div>
+      <div class="brand">
+        <span>Ders Notu Takas Sitesi</span>
+        <small>PDF Not Takası</small>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <main id="icerik" class="content">
+        <nav class="section-nav" aria-label="Sayfalar">
+          <a class="active" href="index.html" aria-current="page">Ana sayfa</a>
+          <a href="dersler.html">Ders listesi</a>
+          <a href="yukle.html">PDF yükle</a>
+          <a href="analiz.html">Özet & Soru</a>
+          <a href="admin.html">Admin</a>
+          <a href="giris.html">Giriş</a>
+        </nav>
+
+        <section class="intro-band page-home">
+          <div class="intro-copy">
+            <p class="eyebrow">Üniversite öğrencileri için</p>
+            <h1>Ders notlarını daha düzenli, onaylı ve sade bir arayüzde topla.</h1>
+            <div class="intro-actions">
+              <a class="primary-action" href="dersler.html">
+                <i data-lucide="layers-3"></i>
+                Kategorilere git
+              </a>
+              <a class="secondary-action" href="yukle.html">
+                <i data-lucide="upload"></i>
+                PDF yükle
+              </a>
+            </div>
+            <div class="signal-row" aria-label="Ders notu akışı">
+              <div class="signal-track">
+                <span>PDF yükle</span>
+                <span>AI ön kontrol</span>
+                <span>Admin onayı</span>
+                <span>Özet çıkar</span>
+                <span>Soru hazırla</span>
+                <span>PDF yükle</span>
+                <span>AI ön kontrol</span>
+                <span>Admin onayı</span>
+                <span>Özet çıkar</span>
+                <span>Soru hazırla</span>
+              </div>
+            </div>
+          </div>
+          <figure class="intro-media">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"
+              alt="Üniversite öğrencileri birlikte ders çalışırken"
+            />
+          </figure>
+        </section>
+
+        <section class="stats-grid calm-stats" aria-label="Özet bilgiler">
+          <article class="stat-card">
+            <i data-lucide="file-text"></i>
+            <strong>5</strong>
+            <span>Öne çıkan not</span>
+          </article>
+          <article class="stat-card">
+            <i data-lucide="layers-3"></i>
+            <strong>6</strong>
+            <span>Dönem kategorisi</span>
+          </article>
+          <article class="stat-card success">
+            <i data-lucide="shield-check"></i>
+            <strong>8</strong>
+            <span>Admin onayı</span>
+          </article>
+        </section>
+
+        <section class="content-band">
+          <div class="section-head">
+            <p class="eyebrow">Sayfa yönetimi</p>
+            <h2>Bölümlere ayrı sayfalardan eriş</h2>
+          </div>
+          <div class="route-grid">
+            <a class="route-card" href="dersler.html">
+              <i data-lucide="book-open"></i>
+              <strong>Ders listesi</strong>
+              <span>Yıl ve dönem kategorileri</span>
+            </a>
+            <a class="route-card" href="yukle.html">
+              <i data-lucide="upload-cloud"></i>
+              <strong>PDF yükleme</strong>
+              <span>Kontrol ve onay süreci</span>
+            </a>
+            <a class="route-card" href="analiz.html">
+              <i data-lucide="file-search"></i>
+              <strong>Özet & Soru</strong>
+              <span>Notlardan çıktı üretme</span>
+            </a>
+            <a class="route-card" href="admin.html">
+              <i data-lucide="shield"></i>
+              <strong>Admin</strong>
+              <span>Onay bekleyen PDF notları</span>
+            </a>
+            <a class="route-card" href="giris.html">
+              <i data-lucide="log-in"></i>
+              <strong>Giriş</strong>
+              <span>Kullanıcı alanı</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="content-band">
+          <div class="section-head">
+            <p class="eyebrow">Öne çıkanlar</p>
+            <h2>Örnek PDF notları</h2>
+          </div>
+          <div id="noteCards" class="note-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

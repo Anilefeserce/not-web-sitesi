@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ders Listesi - Ders Notu Takas Sitesi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+    <header class="topbar">
+      <div class="owner">Anıl Efe Serçe</div>
+      <div class="brand"><span>Ders Notu Takas Sitesi</span><small>Ders Listesi</small></div>
+    </header>
+
+    <div class="app-shell">
+      <main id="icerik" class="content">
+        <nav class="section-nav" aria-label="Sayfalar">
+          <a href="index.html">Ana sayfa</a>
+          <a class="active" href="dersler.html" aria-current="page">Ders listesi</a>
+          <a href="yukle.html">PDF yükle</a>
+          <a href="analiz.html">Özet & Soru</a>
+          <a href="admin.html">Admin</a>
+          <a href="giris.html">Giriş</a>
+        </nav>
+
+        <section class="page-intro">
+          <p class="eyebrow">Kategoriler</p>
+          <h1>Dersleri yıl ve dönem başlıklarından seç.</h1>
+          <p>Ders listesi ayrı sayfada tutulduğu için ana ekran daha sakin kalır.</p>
+        </section>
+
+        <section class="content-band">
+          <div class="section-head">
+            <p class="eyebrow">Ders listesi</p>
+            <h2>Yıl ve dönemlere göre kategoriler</h2>
+          </div>
+          <div class="filter-toolbar" aria-label="Ders filtreleme">
+            <label class="search-field" for="courseSearch">
+              <i data-lucide="search"></i>
+              <input id="courseSearch" type="search" placeholder="Ders adı veya kodu ara" aria-label="Ders adı veya kodu ara" />
+            </label>
+            <div id="termFilters" class="filter-pills" aria-label="Dönem filtreleri"></div>
+          </div>
+          <div id="courseList" class="course-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

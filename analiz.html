@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Özet ve Soru - Ders Notu Takas Sitesi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+    <header class="topbar">
+      <div class="owner">Anıl Efe Serçe</div>
+      <div class="brand"><span>Ders Notu Takas Sitesi</span><small>Özet & Soru</small></div>
+    </header>
+
+    <div class="app-shell">
+      <main id="icerik" class="content">
+        <nav class="section-nav" aria-label="Sayfalar">
+          <a href="index.html">Ana sayfa</a>
+          <a href="dersler.html">Ders listesi</a>
+          <a href="yukle.html">PDF yükle</a>
+          <a class="active" href="analiz.html" aria-current="page">Özet & Soru</a>
+          <a href="admin.html">Admin</a>
+          <a href="giris.html">Giriş</a>
+        </nav>
+
+        <section class="page-intro">
+          <p class="eyebrow">Not analizi</p>
+          <h1>Yüklenen notlardan özet ve örnek soru hazırla.</h1>
+          <p>Bu bölüm seçilen derse göre örnek çıktı üretir ve ayrı sayfada daha ferah görünür.</p>
+        </section>
+
+        <section class="tool-band analysis-band">
+          <div class="section-head">
+            <p class="eyebrow">Özet çıkarma ve soru hazırlama</p>
+            <h2>Not çıktıları</h2>
+          </div>
+          <div class="analysis-layout">
+            <form id="analysisForm" class="analysis-tool">
+              <label for="analysisNote">Yüklenen notu seç</label>
+              <select id="analysisNote" name="analysisNote"></select>
+              <div id="analysisNoteInfo" class="note-info" aria-live="polite"></div>
+              <div class="analysis-actions" aria-label="Not analiz işlemleri">
+                <button type="button" class="primary-action" data-analysis-action="summary">
+                  <i data-lucide="list-checks"></i>
+                  Özet çıkar
+                </button>
+                <button type="button" class="secondary-action" data-analysis-action="questions">
+                  <i data-lucide="circle-help"></i>
+                  Soru hazırla
+                </button>
+              </div>
+            </form>
+
+            <div class="analysis-results" aria-live="polite">
+              <article class="result-box">
+                <div class="result-title"><i data-lucide="file-search"></i><h3>Özet sonucu</h3></div>
+                <p id="summaryOutput">Bir ders notu seçip özet çıkar butonuna bas.</p>
+              </article>
+              <article class="result-box">
+                <div class="result-title"><i data-lucide="clipboard-list"></i><h3>Soru sonucu</h3></div>
+                <ol id="questionOutput" class="question-list">
+                  <li>Bir ders notu seçip soru hazırla butonuna bas.</li>
+                </ol>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

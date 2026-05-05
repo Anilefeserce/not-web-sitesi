@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Yükle - Ders Notu Takas Sitesi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+    <header class="topbar">
+      <div class="owner">Anıl Efe Serçe</div>
+      <div class="brand"><span>Ders Notu Takas Sitesi</span><small>PDF Yükle</small></div>
+    </header>
+
+    <div class="app-shell">
+      <main id="icerik" class="content">
+        <nav class="section-nav" aria-label="Sayfalar">
+          <a href="index.html">Ana sayfa</a>
+          <a href="dersler.html">Ders listesi</a>
+          <a class="active" href="yukle.html" aria-current="page">PDF yükle</a>
+          <a href="analiz.html">Özet & Soru</a>
+          <a href="admin.html">Admin</a>
+          <a href="giris.html">Giriş</a>
+        </nav>
+
+        <section class="page-intro">
+          <p class="eyebrow">PDF süreci</p>
+          <h1>Not yükleme akışını tek ekranda göster.</h1>
+          <p>Bu bölüm gerçek dosya kaydı yapmaz; tasarımsal süreç ve durum adımlarını gösterir.</p>
+        </section>
+
+        <section class="tool-band">
+          <div class="section-head">
+            <p class="eyebrow">Not yükleme</p>
+            <h2>PDF kontrol süreci</h2>
+          </div>
+          <div class="upload-layout">
+            <form class="upload-tool" id="uploadForm">
+              <label for="mockCourse">Ders seç</label>
+              <select id="mockCourse" name="mockCourse"></select>
+
+              <label for="mockPdf">PDF dosyası</label>
+              <input id="mockPdf" name="mockPdf" type="file" accept="application/pdf,.pdf" required />
+
+              <button type="submit" class="primary-action">
+                <i data-lucide="send"></i>
+                Süreci başlat
+              </button>
+            </form>
+
+            <div class="process-panel">
+              <ol class="process-list" aria-label="PDF kontrol süreci" aria-live="polite">
+                <li class="process-step active" data-step="0"><span>01</span><strong>PDF seçildi</strong></li>
+                <li class="process-step" data-step="1"><span>02</span><strong>AI ön kontrol</strong></li>
+                <li class="process-step" data-step="2"><span>03</span><strong>Admin onayı</strong></li>
+                <li class="process-step" data-step="3"><span>04</span><strong>Kuyruğa eklendi</strong></li>
+              </ol>
+
+              <article id="uploadPreview" class="upload-status-card" aria-live="polite">
+                <span class="status-pill pending">Hazır</span>
+                <h3>Henüz PDF seçilmedi</h3>
+                <p>Ders seçip PDF dosyası eklediğinde burada yükleme özeti görünecek.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

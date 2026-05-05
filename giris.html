@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giriş ve Kayıt - Ders Notu Takas Sitesi</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+    <header class="topbar">
+      <div class="owner">Anıl Efe Serçe</div>
+      <div class="brand"><span>Ders Notu Takas Sitesi</span><small>Kullanıcı Alanı</small></div>
+    </header>
+
+    <div class="app-shell">
+      <main id="icerik" class="content">
+        <nav class="section-nav" aria-label="Sayfalar">
+          <a href="index.html">Ana sayfa</a>
+          <a href="dersler.html">Ders listesi</a>
+          <a href="yukle.html">PDF yükle</a>
+          <a href="analiz.html">Özet & Soru</a>
+          <a href="admin.html">Admin</a>
+          <a class="active" href="giris.html" aria-current="page">Giriş</a>
+        </nav>
+
+        <section class="page-intro">
+          <p class="eyebrow">Kullanıcı alanı</p>
+          <h1>Giriş ve kayıt ekranını sade tut.</h1>
+          <p>Bu alan tasarımsal prototip olduğu için arayüz hissini gösterir.</p>
+        </section>
+
+        <section class="tool-band auth-band">
+          <div class="section-head">
+            <p class="eyebrow">Giriş</p>
+            <h2>Öğrenci hesabı</h2>
+          </div>
+          <div class="auth-stack">
+            <form id="authForm" class="auth-form">
+              <h3>Giriş yap</h3>
+              <p class="form-note">Daha önce not yükleyen öğrenciler için hızlı giriş maketi.</p>
+
+              <label for="loginEmail">E-posta</label>
+              <input id="loginEmail" type="email" placeholder="ogrenci@universite.edu.tr" autocomplete="email" required />
+
+              <label for="loginPassword">Şifre</label>
+              <input id="loginPassword" type="password" placeholder="••••••••" autocomplete="current-password" required />
+
+              <button type="submit" class="primary-action">
+                <i data-lucide="log-in"></i>
+                Giriş yap
+              </button>
+            </form>
+
+            <form id="registerForm" class="auth-form">
+              <h3>Kayıt ol</h3>
+              <p class="form-note">Yeni kullanıcı kaydı gerçek veri tutmadan arayüz olarak gösterilir.</p>
+
+              <label for="registerName">Ad soyad</label>
+              <input id="registerName" type="text" placeholder="Anıl Efe Serçe" autocomplete="name" required />
+
+              <label for="registerEmail">Üniversite e-postası</label>
+              <input id="registerEmail" type="email" placeholder="ogrenci@universite.edu.tr" autocomplete="email" required />
+
+              <label for="registerPassword">Şifre</label>
+              <input id="registerPassword" type="password" placeholder="••••••••" autocomplete="new-password" required />
+
+              <button type="submit" class="secondary-action">
+                <i data-lucide="user-plus"></i>
+                Kayıt maketini göster
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
