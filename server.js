@@ -11,6 +11,8 @@ const dataDir = path.join(rootDir, "data");
 const dbPath = path.join(dataDir, "db.json");
 const uploadDir = path.join(rootDir, "uploads");
 const port = Number(process.env.PORT || 3000);
+const isProduction = process.env.NODE_ENV === "production";
+const quickAdminLoginEnabled = process.env.ADMIN_QUICK_LOGIN_ENABLED !== "false";
 
 fs.mkdirSync(dataDir, { recursive: true });
 fs.mkdirSync(uploadDir, { recursive: true });
@@ -122,6 +124,9 @@ function requireAdminPage(req, res, next) {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+if (isProduction) {
+  app.set("trust proxy", 1);
+}
 app.use(
   session({
     name: "not_web_sid",
@@ -131,7 +136,7 @@ app.use(
     cookie: {
       httpOnly: true,
       sameSite: "lax",
-      secure: false,
+      secure: isProduction,
       maxAge: 1000 * 60 * 60 * 8,
     },
   }),
@@ -226,6 +231,10 @@ app.post("/api/auth/admin-login", (req, res) => {
 });
 
 app.post("/api/auth/admin-quick-login", (req, res) => {
+  if (!quickAdminLoginEnabled) {
+    return res.status(403).json({ error: "Tek tus admin girisi kapali." });
+  }
+
   const db = readDb();
   const user = db.users.find((item) => item.role === "admin");
 
@@ -347,7 +356,7 @@ app.use((error, req, res, next) => {
   return next();
 });
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Ders notu sitesi backend hazir: http://localhost:${port}`);
   console.log("Demo admin: admin@notweb.local / Admin123!");
   console.log("Demo ogrenci: ogrenci@notweb.local / User123!");
