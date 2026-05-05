@@ -54,6 +54,22 @@
               </button>
             </form>
 
+            <form id="adminAuthForm" class="auth-form">
+              <h3>Admin girisi</h3>
+              <p class="form-note">Admin paneli icin ayrilan backend oturumu. Normal kullanici bu alandan admin paneline gecemez.</p>
+
+              <label for="adminEmail">Admin e-posta</label>
+              <input id="adminEmail" type="email" placeholder="admin@notweb.local" autocomplete="username" required />
+
+              <label for="adminPassword">Admin sifre</label>
+              <input id="adminPassword" type="password" placeholder="Admin123!" autocomplete="current-password" required />
+
+              <button type="submit" class="secondary-action">
+                <i data-lucide="shield-check"></i>
+                Admin paneline gir
+              </button>
+            </form>
+
             <form id="registerForm" class="auth-form">
               <h3>Kayıt ol</h3>
               <p class="form-note">Yeni kullanıcı kaydı gerçek veri tutmadan arayüz olarak gösterilir.</p>

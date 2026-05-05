@@ -219,6 +219,23 @@ select:focus-visible {
   transition: background 180ms var(--ease), color 180ms var(--ease), transform 180ms var(--ease);
 }
 
+.nav-session {
+  flex: 0 0 auto;
+  min-height: 44px;
+  border: 1px dashed rgba(17, 19, 24, 0.18);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  padding: 0 14px;
+  cursor: pointer;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
 .section-nav a:hover {
   background: #f4f6f8;
   color: var(--black);
