@@ -642,6 +642,7 @@ function setButtonLoading(button, loading) {
 function setupAuthForms() {
   const loginForm = $("#authForm");
   const adminForm = $("#adminAuthForm");
+  const quickAdminButton = $("#quickAdminLogin");
   const registerForm = $("#registerForm");
 
   if (loginForm) {
@@ -688,6 +689,22 @@ function setupAuthForms() {
         showToast(error.message);
       } finally {
         setButtonLoading(button, false);
+      }
+    });
+  }
+
+  if (quickAdminButton) {
+    quickAdminButton.addEventListener("click", async () => {
+      setButtonLoading(quickAdminButton, true);
+      try {
+        const payload = await apiRequest("/api/auth/admin-quick-login", { method: "POST" });
+        currentUser = payload.user;
+        showToast("Admin oturumu acildi.");
+        window.location.href = "admin.html";
+      } catch (error) {
+        showToast(error.message);
+      } finally {
+        setButtonLoading(quickAdminButton, false);
       }
     });
   }

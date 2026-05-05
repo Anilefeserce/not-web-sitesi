@@ -225,6 +225,18 @@ app.post("/api/auth/admin-login", (req, res) => {
   return res.json({ user: publicUser(user) });
 });
 
+app.post("/api/auth/admin-quick-login", (req, res) => {
+  const db = readDb();
+  const user = db.users.find((item) => item.role === "admin");
+
+  if (!user) {
+    return res.status(404).json({ error: "Admin hesabi bulunamadi." });
+  }
+
+  req.session.user = publicUser(user);
+  return res.json({ user: publicUser(user) });
+});
+
 app.post("/api/auth/logout", (req, res) => {
   req.session.destroy(() => {
     res.clearCookie("not_web_sid");
